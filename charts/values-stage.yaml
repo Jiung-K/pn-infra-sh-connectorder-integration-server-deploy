@@ -1,0 +1,7 @@
+replicaCount: 2
+
+image:
+  tag: "integration-server-latest"
+
+env:
+  SPRING_PROFILES_ACTIVE: stage

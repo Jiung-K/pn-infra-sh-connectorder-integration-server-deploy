@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  tag: "integration-server-latest"
+
+env:
+  SPRING_PROFILES_ACTIVE: dev
+
+secrets: []
+
+serviceAccount:
+  annotations: {}

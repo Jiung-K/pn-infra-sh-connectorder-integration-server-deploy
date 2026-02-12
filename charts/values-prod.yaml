@@ -1,0 +1,21 @@
+replicaCount: 3
+
+image:
+  tag: "integration-server-latest"
+
+env:
+  SPRING_PROFILES_ACTIVE: prod
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 1Gi
+  limits:
+    cpu: 2000m
+    memory: 2Gi
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70

@@ -1,0 +1,38 @@
+replicaCount: 1
+
+image:
+  repository: 468411441302.dkr.ecr.ap-northeast-2.amazonaws.com/pn-connect-order-dev
+  tag: "integration-server-latest"
+  pullPolicy: Always
+
+service:
+  port: 80
+  targetPort: 5001
+
+env: {}
+secrets: []
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts: []
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
